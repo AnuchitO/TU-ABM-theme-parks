@@ -19,6 +19,14 @@ to setup
     set color green
     setxy 1 -10
     ]
+  
+  create-nodes 1 [
+    set label 2
+    set size 2
+    set shape  "circle"
+    set color green
+    setxy -13 -7
+    ]
 end
 
 to go
