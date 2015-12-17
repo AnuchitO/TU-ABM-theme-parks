@@ -1,4 +1,4 @@
-breed [nodes node]
+breed [zones zone]
 breed [atts  att]
 breed [visitors visitor]
 
@@ -7,13 +7,13 @@ visitors-own [location]
 to setup
   clear-all
   reset-ticks
-  create-nodes-intersaction
+  create-zones-intersaction
   create-atts-point
-  create-path-node-to-atts
+  create-path-zone-to-atts
   create-visitors number-persons [
        set shape "person"
        set size 1.4
-       set location node 0
+       set location zone 0
        move-to location
   ]
   
@@ -23,6 +23,7 @@ to go
  ask links [set thickness 0.2]
  ask visitors [ 
    visitor-move-to-new-location
+   
   ]
  tick  
 end
@@ -54,8 +55,8 @@ to create-atts-point
     ]
 end
 
-to create-nodes-intersaction
-  create-nodes 1 [
+to create-zones-intersaction
+  create-zones 1 [
     set label 0
     set size 3
     set heading 0
@@ -63,96 +64,96 @@ to create-nodes-intersaction
     setxy 1 -18
     ]
  
-  create-nodes 1 [
-    set-common-prop-node
+  create-zones 1 [
+    set-common-prop-zone
     set label 1
     setxy 1 -10
     ]
   
-  create-nodes 1 [
-    set-common-prop-node
+  create-zones 1 [
+    set-common-prop-zone
     set label 2
     setxy -13 -7
     ]
   
-   create-nodes 1 [
-    set-common-prop-node
+   create-zones 1 [
+    set-common-prop-zone
     set label 3
     setxy -14 4
     ]
    
-   create-nodes 1 [
-    set-common-prop-node
+   create-zones 1 [
+    set-common-prop-zone
     set label 4
     setxy -7 13
     ]
    
-   create-nodes 1 [
-    set-common-prop-node
+   create-zones 1 [
+    set-common-prop-zone
     set label 5
     setxy 6 13
     ]
    
-   create-nodes 1 [
-    set-common-prop-node
+   create-zones 1 [
+    set-common-prop-zone
     set label 6
     setxy 12 3
     ]
    
-    create-nodes 1 [
-    set-common-prop-node
+    create-zones 1 [
+    set-common-prop-zone
     set label 6
     setxy 15 -8
     ]
     
-    create-path-connect-nodes
+    create-path-connect-zones
 end
 
-to set-common-prop-node 
+to set-common-prop-zone 
   set size 1
   set shape  "circle"
   set color green
 end
 
-to create-path-connect-nodes 
-  ask node 0 [
-    create-link-with  node 1
+to create-path-connect-zones 
+  ask zone 0 [
+    create-link-with  zone 1
     ]
   
-   ask node 1 [
-    create-link-with  node 2
+   ask zone 1 [
+    create-link-with  zone 2
     ]
    
-    ask node 2 [
-    create-link-with  node 3
+    ask zone 2 [
+    create-link-with  zone 3
     ]
     
-    ask node 3 [
-    create-link-with  node 4
+    ask zone 3 [
+    create-link-with  zone 4
     ]
     
-    ask node 4 [
-    create-link-with  node 5
+    ask zone 4 [
+    create-link-with  zone 5
     ]
     
-    ask node 5 [
-    create-link-with  node 6
+    ask zone 5 [
+    create-link-with  zone 6
     ]
     
-    ask node 6 [
-    create-link-with  node 7
+    ask zone 6 [
+    create-link-with  zone 7
     ]
     
-    ask node 7 [
-    create-link-with  node 1
+    ask zone 7 [
+    create-link-with  zone 1
     ]
     
     
      ask links [set thickness 0.2]
 end
 
-to create-path-node-to-atts
-  ask node 2 [
+to create-path-zone-to-atts
+  ask zone 2 [
     create-link-with att 8
     create-link-with att 9
     ]
