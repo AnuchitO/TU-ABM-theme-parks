@@ -10,6 +10,7 @@ to setup
     set label 8
     set size 2
     set shape "star"
+    set color blue
     setxy -13 -12
     ]
   
