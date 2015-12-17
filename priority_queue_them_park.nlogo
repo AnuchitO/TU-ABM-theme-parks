@@ -33,9 +33,27 @@ to setup
    create-nodes 1 [
     set-common-prop-node
     set label 4
-    setxy -6 10
+    setxy -7 13
     ]
    
+   create-nodes 1 [
+    set-common-prop-node
+    set label 5
+    setxy 6 13
+    ]
+   
+   create-nodes 1 [
+    set-common-prop-node
+    set label 6
+    setxy 12 3
+    ]
+   
+    create-nodes 1 [
+    set-common-prop-node
+    set label 6
+    setxy 15 -8
+    ]
+    
    create-path
    
 end
