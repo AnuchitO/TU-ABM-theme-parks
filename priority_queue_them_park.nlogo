@@ -54,7 +54,7 @@ to setup
     setxy 15 -8
     ]
     
-   create-path
+   create-path-connect-nodes
    
 end
 
@@ -64,7 +64,7 @@ to set-common-prop-node
   set color green
 end
 
-to create-path 
+to create-path-connect-nodes 
   ask node 0 [
     create-link-with  node 1
     ]
