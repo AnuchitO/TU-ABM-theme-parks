@@ -9,7 +9,7 @@ to setup
   reset-ticks
   create-nodes-intersaction
   create-atts-point
-  
+  create-path-node-to-atts
   create-visitors number-persons [
        set shape "person"
        set size 1.4
@@ -147,6 +147,13 @@ to create-path-connect-nodes
      ask links [set thickness 0.2]
 end
 
+to create-path-node-to-atts
+  ask node 2 [
+    create-link-with att 8
+    create-link-with att 9
+    ]
+end
+
 
 @#$#@#$#@
 GRAPHICS-WINDOW
@@ -217,9 +224,9 @@ SLIDER
 56
 number-persons
 number-persons
-0
+1
 1000
-100
+1
 1
 1
 NIL
