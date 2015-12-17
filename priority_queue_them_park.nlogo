@@ -10,7 +10,7 @@ to setup
   create-nodes-intersaction
   create-atts-point
   
-  create-visitors 1 [
+  create-visitors number-persons [
        set shape "person"
        set size 1.4
        set location node 0
@@ -177,10 +177,10 @@ ticks
 30.0
 
 BUTTON
-51
-107
-117
-140
+18
+387
+84
+420
 NIL
 setup
 NIL
@@ -194,10 +194,10 @@ NIL
 1
 
 BUTTON
-94
-204
-157
-237
+90
+387
+153
+420
 NIL
 go\n
 T
@@ -209,6 +209,21 @@ NIL
 NIL
 NIL
 1
+
+SLIDER
+0
+23
+172
+56
+number-persons
+number-persons
+0
+1000
+100
+1
+1
+NIL
+HORIZONTAL
 
 @#$#@#$#@
 ## WHAT IS IT?
