@@ -36,6 +36,17 @@ to setup
     setxy -14 4
     ]
    
+   create-path
+   
+end
+
+to create-path 
+  ask node 0 [
+    create-link-with  node 1
+    ]
+   ask node 1 [
+    create-link-with  node 2
+    ]
 end
 
 to go
