@@ -1,12 +1,21 @@
 breed [nodes node]
 breed [atts  att]
+breed [visitors visitor]
 
+visitors-own [location]
 
 to setup
   clear-all
   reset-ticks
   create-nodes-intersaction
   create-atts-point
+  
+  create-visitors 1 [
+       set shape "person"
+       set size 1.4
+       set location node 0
+       move-to location
+  ]
   
 end
 
