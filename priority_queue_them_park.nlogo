@@ -22,14 +22,18 @@ end
 to go
  ask links [set thickness 0.2]
  ask visitors [ 
-   let new-location one-of [link-neighbors] of location
+   visitor-move-to-new-location
+  ]
+ tick  
+end
+
+to visitor-move-to-new-location
+  let new-location one-of [link-neighbors] of location
    ask [link-with new-location] of location [set thickness 0.3]
    face new-location
    while [distance new-location > 1]
          [fd 0.1]
    set location new-location
-  ]
- tick  
 end
 
 to create-atts-point
