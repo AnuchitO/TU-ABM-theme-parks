@@ -29,7 +29,7 @@ to create-atts-point
     ]
   
   create-atts 1 [
-    set label 8
+    set label 9
     set size 2
     set shape "star"
     set color blue
