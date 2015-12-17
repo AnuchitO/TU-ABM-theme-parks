@@ -4,6 +4,13 @@ breed [atts  att]
 to setup
   clear-all
   reset-ticks
+  create-nodes-intersaction
+    
+   
+   
+end
+
+to create-nodes-intersaction
   create-nodes 1 [
     set label 0
     set size 3
@@ -54,8 +61,7 @@ to setup
     setxy 15 -8
     ]
     
-   create-path-connect-nodes
-   
+    create-path-connect-nodes
 end
 
 to set-common-prop-node 
