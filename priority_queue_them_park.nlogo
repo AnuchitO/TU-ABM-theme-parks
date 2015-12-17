@@ -13,31 +13,31 @@ to setup
     ]
  
   create-nodes 1 [
+    set-common-prop-node
     set label 1
-    set size 2
-    set shape  "circle"
-    set color green
     setxy 1 -10
     ]
   
   create-nodes 1 [
+    set-common-prop-node
     set label 2
-    set size 2
-    set shape  "circle"
-    set color green
     setxy -13 -7
     ]
   
    create-nodes 1 [
+    set-common-prop-node
     set label 3
-    set size 2
-    set shape  "circle"
-    set color green
     setxy -14 4
     ]
    
    create-path
    
+end
+
+to set-common-prop-node 
+  set size 1
+  set shape  "circle"
+  set color green
 end
 
 to create-path 
