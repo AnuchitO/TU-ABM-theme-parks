@@ -77,6 +77,27 @@ to create-path
     create-link-with  node 3
     ]
     
+    ask node 3 [
+    create-link-with  node 4
+    ]
+    
+    ask node 4 [
+    create-link-with  node 5
+    ]
+    
+    ask node 5 [
+    create-link-with  node 6
+    ]
+    
+    ask node 6 [
+    create-link-with  node 7
+    ]
+    
+    ask node 7 [
+    create-link-with  node 1
+    ]
+    
+    
      ask links [set thickness 0.2]
 end
 
