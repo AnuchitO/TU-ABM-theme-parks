@@ -5,7 +5,21 @@ to setup
   clear-all
   reset-ticks
   create-nodes-intersaction
-    
+  
+  create-atts 1 [
+    set label 8
+    set size 2
+    set shape "star"
+    setxy -13 -12
+    ]
+  
+  create-atts 1 [
+    set label 8
+    set size 2
+    set shape "star"
+    set color blue
+    setxy -9 -5
+    ]
    
    
 end
