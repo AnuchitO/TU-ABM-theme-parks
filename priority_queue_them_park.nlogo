@@ -1,11 +1,16 @@
 breed [nodes node]
 breed [atts  att]
 
+
 to setup
   clear-all
   reset-ticks
   create-nodes-intersaction
+  create-atts-point
   
+end
+
+to create-atts-point
   create-atts 1 [
     set label 8
     set size 2
@@ -21,8 +26,6 @@ to setup
     set color blue
     setxy -9 -5
     ]
-   
-   
 end
 
 to create-nodes-intersaction
