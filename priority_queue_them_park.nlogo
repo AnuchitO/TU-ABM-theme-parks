@@ -30,6 +30,12 @@ to setup
     setxy -14 4
     ]
    
+   create-nodes 1 [
+    set-common-prop-node
+    set label 4
+    setxy -6 10
+    ]
+   
    create-path
    
 end
