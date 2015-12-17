@@ -16,6 +16,13 @@ to setup
     fd 6
    ]
    
+  ask node 1
+  [
+    create-link-with  node 0
+  ]
+  
+  ask links [set thickness 0.5]
+  repeat 30 [ layout-spring nodes links 0.2 5 1 ]
 end
 
 to go
