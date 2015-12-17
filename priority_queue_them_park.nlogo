@@ -1,28 +1,17 @@
 breed [nodes node]
+breed [atts  att]
 
 to setup
   clear-all
   reset-ticks
   create-nodes 1 [
-    set shape  "circle"
-    set heading 90
-    set color red
-    fd 6
+    set label 0
+    set size 3
+    set heading 0
+    set color orange
+    setxy 1 -18
     ]
-  create-nodes 1 [
-    set shape  "circle"
-    set heading 45
-    set color green
-    fd 6
-   ]
-   
-  ask node 1
-  [
-    create-link-with  node 0
-  ]
-  
-  ask links [set thickness 0.5]
-  repeat 30 [ layout-spring nodes links 0.2 5 1 ]
+ 
 end
 
 to go
@@ -31,26 +20,26 @@ to go
 end
 @#$#@#$#@
 GRAPHICS-WINDOW
-210
-10
-649
-470
-16
-16
-13.0
+173
+11
+689
+548
+20
+20
+12.3415
 1
 10
 1
 1
 1
 0
+0
+0
 1
-1
-1
--16
-16
--16
-16
+-20
+20
+-20
+20
 0
 0
 1
