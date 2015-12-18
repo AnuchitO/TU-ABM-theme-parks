@@ -39,6 +39,10 @@ end
 
 to queueing
    set queueing-normal?  true
+   let vs self
+   ask location [
+      set queue-normal lput self queue-normal
+   ]
 end
 
 to visitor-move-to-new-location
