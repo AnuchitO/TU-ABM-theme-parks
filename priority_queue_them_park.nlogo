@@ -2,7 +2,15 @@ breed [zones zone]
 breed [atts  att]
 breed [visitors visitor]
 
-visitors-own [location]
+visitors-own [
+  location
+  queueing-normal?
+  waiting-time
+  ]
+
+atts-own [
+   queue-normal  
+  ]
 
 to setup
   clear-all
@@ -13,6 +21,7 @@ to setup
   create-visitors number-persons [
        set shape "person"
        set size 1.4
+       set queueing-normal?  false
        set location zone 0
        move-to location
   ]
@@ -22,14 +31,14 @@ end
 to go
  ask links [set thickness 0.2]
  ask visitors [ 
-   visitor-move-to-new-location
+   if not queueing-normal? [visitor-move-to-new-location]
    if member? location  atts  [queueing]
   ]
- tick  
+ tick 
 end
 
 to queueing
-   set label "nong"
+   set queueing-normal?  true
 end
 
 to visitor-move-to-new-location
@@ -39,13 +48,13 @@ to visitor-move-to-new-location
    while [distance new-location > 1]
          [fd 0.1]
    set location new-location
-  ;; if distance new-location > 1 [print "AAAAA"]
 end
 
 to create-atts-point
   create-atts 1 [
     set label 8
     set size 2
+    set queue-normal []
     set shape "star"
     set color blue
     setxy -13 -12
@@ -54,6 +63,7 @@ to create-atts-point
   create-atts 1 [
     set label 9
     set size 2
+    set queue-normal []
     set shape "star"
     set color blue
     setxy -9 -5
