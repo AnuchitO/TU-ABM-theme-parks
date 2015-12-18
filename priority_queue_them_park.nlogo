@@ -23,14 +23,13 @@ to go
  ask links [set thickness 0.2]
  ask visitors [ 
    visitor-move-to-new-location
-   queueing
+   if member? location  atts  [queueing]
   ]
  tick  
 end
 
 to queueing
-  if member? location  zones   
-  [set label [label] of location]
+   set label "nong"
 end
 
 to visitor-move-to-new-location
