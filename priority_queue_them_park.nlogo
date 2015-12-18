@@ -34,14 +34,27 @@ to go
    if not queueing-normal? [visitor-move-to-new-location]
    if member? location  atts  [queueing]
   ]
+ ;; atts pop queue-normal
+ ask atts [
+    if not empty? queue-normal [dequeue-normal]
+ ]
+ ;; set waiting time visitor
  tick 
+end
+
+to dequeue-normal
+   if ticks mod 3 = 0 [
+     let visit  first queue-normal
+     ask visit [set queueing-normal? false]
+     set queue-normal but-first queue-normal
+   ]
 end
 
 to queueing
    set queueing-normal?  true
    let vs self
    ask location [
-      set queue-normal lput self queue-normal
+      set queue-normal lput vs queue-normal
    ]
 end
 
