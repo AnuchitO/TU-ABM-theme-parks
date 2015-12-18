@@ -23,9 +23,14 @@ to go
  ask links [set thickness 0.2]
  ask visitors [ 
    visitor-move-to-new-location
-   
+   queueing
   ]
  tick  
+end
+
+to queueing
+  if member? location  zones   
+  [set label [label] of location]
 end
 
 to visitor-move-to-new-location
@@ -35,6 +40,7 @@ to visitor-move-to-new-location
    while [distance new-location > 1]
          [fd 0.1]
    set location new-location
+  ;; if distance new-location > 1 [print "AAAAA"]
 end
 
 to create-atts-point
@@ -158,7 +164,6 @@ to create-path-zone-to-atts
     create-link-with att 9
     ]
 end
-
 
 @#$#@#$#@
 GRAPHICS-WINDOW
