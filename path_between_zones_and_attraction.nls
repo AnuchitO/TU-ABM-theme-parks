@@ -3,5 +3,12 @@ to create-path-zone-to-atts
     create-link-with att 8
     create-link-with att 9
     ]
+
+  ask zone 3 [
+    create-link-with att 10
+    create-link-with att 11
+    create-link-with att 12
+	create-link-with att 13
+    ]
 end
 
