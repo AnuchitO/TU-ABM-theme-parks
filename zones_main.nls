@@ -1,0 +1,62 @@
+breed [zones zone]
+
+to set-common-prop-zone
+	set size 1
+	set shape  "circle"
+	set color green
+end
+
+to create-zones-intersaction
+	create-zones 1 [
+		set label 0
+		set size 3
+		set heading 0
+		set color orange
+		setxy 1 -18
+	]
+
+	create-zones 1 [
+		set-common-prop-zone
+		set label 1
+		setxy 1 -10
+	]
+
+	create-zones 1 [
+		set-common-prop-zone
+		set label 2
+		setxy -13 -7
+	]
+
+	create-zones 1 [
+		set-common-prop-zone
+		set label 3
+		setxy -14 4
+	]
+
+	create-zones 1 [
+		set-common-prop-zone
+		set label 4
+		setxy -7 13
+	]
+
+	create-zones 1 [
+		set-common-prop-zone
+		set label 5
+		setxy 6 13
+	]
+
+	create-zones 1 [
+		set-common-prop-zone
+		set label 6
+		setxy 12 3
+	]
+
+	create-zones 1 [
+		set-common-prop-zone
+		set label 6
+		setxy 15 -8
+	]
+
+	create-path-connect-zones
+end
+
