@@ -6,7 +6,18 @@ breed [atts  att]
 
 atts-own [
    queue-normal
+   queue-priority
+   capacity-queue-priority
  ]
+
+to set-common-prop-atts
+    set size 2
+    set queue-normal []
+	set queue-priority []
+	set capacity-queue-priority  capacity-of-priority-queue
+    set shape "star"
+    set color blue
+end
 
 to create-atts-point
   create-atts 1 [
@@ -111,12 +122,4 @@ to create-atts-point
 	setxy 10 -6
    ]
 
-end
-
-
-to set-common-prop-atts
-    set size 2
-    set queue-normal []
-    set shape "star"
-    set color blue
 end

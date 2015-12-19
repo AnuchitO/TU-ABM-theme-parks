@@ -1,7 +1,17 @@
 to queueing
-   set queueing?  true
-   let vs self
-   ask location [
-      set queue-normal lput vs queue-normal
-   ]
+	let vs self
+	ifelse random 10 < 5 [
+		if (privilege-priority > 0) and ((length [queue-priority] of location) < ([capacity-queue-priority] of location) )[
+			set queueing?  true
+			set privilege-priority privilege-priority - 1
+			ask location [
+				set queue-priority lput vs queue-priority
+			]
+		]
+	][
+		set queueing?  true
+		ask location [
+			set queue-normal lput vs queue-normal
+		]
+	]
 end

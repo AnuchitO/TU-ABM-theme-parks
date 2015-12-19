@@ -6,6 +6,7 @@ breed [visitors visitor]
 visitors-own [
 	location
 	queueing?
+	privilege-priority
 	waiting-time
 ]
 
@@ -14,6 +15,7 @@ to create-visitors-initial
 		set shape "person"
 		set size 1.4
 		set queueing?  false
+		set privilege-priority  capacity-of-priority-queue
 		set waiting-time  0
 		set location zone 0
 		move-to location

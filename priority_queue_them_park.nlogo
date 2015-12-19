@@ -6,10 +6,18 @@ __includes[
             "visitors.nls"
             "report.nls"
           ]
+
+
+globals [
+   globals-waiting-time
+   globals-numbers-playing
+  ]
       
 to setup
   clear-all
   reset-ticks
+  set globals-waiting-time  0
+  set globals-numbers-playing  1
   create-zones-intersaction
   create-atts-point
   create-path-zone-to-atts
@@ -17,15 +25,17 @@ to setup
 end
 
 to go
+ set globals-waiting-time  0
+ set globals-numbers-playing  1
  ask links [set thickness 0.2]
  ask visitors [ 
    if not queueing? [visitor-move-to-new-location]
    if member? location  atts  [queueing]
   ]
- tick 
  ;; atts pop queue-normal
  ask atts [
     if not empty? queue-normal [dequeue-normal]
+    if not empty? queue-priority [dequeue-priority]
  ]
  ;; plots waiting time visitor
  draw-graph-plots
@@ -109,7 +119,7 @@ number-persons
 number-persons
 1
 300
-64
+90
 1
 1
 NIL

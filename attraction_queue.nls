@@ -2,10 +2,31 @@ to dequeue-normal
    if ticks mod 3 = 0 [
      let visit  first queue-normal
      ask visit [
+	   set globals-waiting-time  globals-waiting-time + waiting-time
+	   set globals-numbers-playing  globals-numbers-playing + 1
        set queueing? false
        set waiting-time 0
     ]
 
      set queue-normal but-first queue-normal
    ]
+end
+
+to dequeue-priority
+	if ticks mod 3 = 0 [
+		let iteration 1
+		while [ iteration <= (capacity-of-priority-queue / 2)][
+			if not empty? queue-priority [
+				let visit  first queue-priority
+				ask visit [
+					set globals-waiting-time  globals-waiting-time + waiting-time
+					set globals-numbers-playing  globals-numbers-playing + 1
+					set queueing? false
+					set waiting-time 0
+				]
+				set queue-priority but-first queue-priority
+			]
+			set iteration iteration + 1
+		]
+	]
 end
