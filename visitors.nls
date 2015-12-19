@@ -2,7 +2,7 @@ breed [visitors visitor]
 
 visitors-own [
 	location
-	queueing-normal?
+	queueing?
 	waiting-time
 ]
 
@@ -10,7 +10,7 @@ to create-visitors-initial
 	create-visitors number-persons [
 		set shape "person"
 		set size 1.4
-		set queueing-normal?  false
+		set queueing?  false
 		set waiting-time  0
 		set location zone 0
 		move-to location
@@ -33,7 +33,7 @@ end
 
 to update-waiting-time-visitors
 ask visitors [
-	if queueing-normal? [
+	if queueing? [
 		update-waiting-time-queue-normal
 	]
 ]

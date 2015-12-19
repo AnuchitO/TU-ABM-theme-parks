@@ -18,7 +18,7 @@ end
 to go
  ask links [set thickness 0.2]
  ask visitors [ 
-   if not queueing-normal? [visitor-move-to-new-location]
+   if not queueing? [visitor-move-to-new-location]
    if member? location  atts  [queueing]
   ]
  ;; atts pop queue-normal
@@ -34,13 +34,13 @@ end
 to dequeue-normal
    if ticks mod 3 = 0 [
      let visit  first queue-normal
-     ask visit [set queueing-normal? false]
+     ask visit [set queueing? false]
      set queue-normal but-first queue-normal
    ]
 end
 
 to queueing
-   set queueing-normal?  true
+   set queueing?  true
    let vs self
    ask location [
       set queue-normal lput vs queue-normal
