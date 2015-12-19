@@ -28,13 +28,17 @@ to go
  ;; set waiting time visitor
  update-waiting-time-visitors
  ;; report waiting time visitor
+ 
  tick 
 end
 
 to dequeue-normal
    if ticks mod 3 = 0 [
      let visit  first queue-normal
-     ask visit [set queueing? false]
+     ask visit [
+       set queueing? false
+       set waiting-time 0
+    ]
      set queue-normal but-first queue-normal
    ]
 end
