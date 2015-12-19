@@ -4,6 +4,7 @@ __includes[
             "path_between_zones.nls"
             "path_between_zones_and_attraction.nls"
             "visitors.nls"
+            "report.nls"
           ]
          
 to setup
@@ -28,7 +29,7 @@ to go
  ;; set waiting time visitor
  update-waiting-time-visitors
  ;; report waiting time visitor
- 
+ draw-graph-plots
  tick 
 end
 
@@ -121,11 +122,29 @@ number-persons
 number-persons
 1
 1000
-351
+1
 1
 1
 NIL
 HORIZONTAL
+
+PLOT
+720
+80
+1289
+439
+Wait Time
+time
+wait time(min)
+0.0
+10.0
+0.0
+10.0
+true
+false
+"" ""
+PENS
+"wait-time" 1.0 0 -16777216 true "" ""
 
 @#$#@#$#@
 ## WHAT IS IT?
