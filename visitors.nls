@@ -1,3 +1,6 @@
+__includes[
+	"visitors_queue.nls"
+]
 breed [visitors visitor]
 
 visitors-own [

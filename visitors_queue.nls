@@ -1,0 +1,7 @@
+to queueing
+   set queueing?  true
+   let vs self
+   ask location [
+      set queue-normal lput vs queue-normal
+   ]
+end

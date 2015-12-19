@@ -34,26 +34,6 @@ to go
 
 end
 
-to dequeue-normal
-   if ticks mod 3 = 0 [
-     let visit  first queue-normal
-     ask visit [
-       set queueing? false
-       set waiting-time 0
-    ]
-    
-     set queue-normal but-first queue-normal
-   ]
-end
-
-to queueing
-   set queueing?  true
-   let vs self
-   ask location [
-      set queue-normal lput vs queue-normal
-   ]
-end
-
 to trigger-ticks
   update-waiting-time-visitors
   tick
@@ -129,7 +109,7 @@ number-persons
 number-persons
 1
 300
-1
+64
 1
 1
 NIL
@@ -504,7 +484,7 @@ NetLogo 5.2.0
   <experiment name="wait-time-normal-q" repetitions="1" runMetricsEveryStep="true">
     <setup>setup</setup>
     <go>go</go>
-    <timeLimit steps="3000"/>
+    <timeLimit steps="5000"/>
     <metric>(sum [waiting-time] of visitors) / ((count visitors with [queueing?]) + 1)</metric>
     <enumeratedValueSet variable="number-persons">
       <value value="1"/>

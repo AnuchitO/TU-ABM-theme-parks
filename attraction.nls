@@ -1,3 +1,7 @@
+__includes[
+            "attraction_queue.nls"
+          ]
+
 breed [atts  att]
 
 atts-own [
