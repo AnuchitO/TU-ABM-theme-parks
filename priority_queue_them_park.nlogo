@@ -26,6 +26,8 @@ to go
     if not empty? queue-normal [dequeue-normal]
  ]
  ;; set waiting time visitor
+ update-waiting-time-visitors
+ ;; report waiting time visitor
  tick 
 end
 

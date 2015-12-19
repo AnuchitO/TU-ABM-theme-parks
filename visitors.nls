@@ -11,6 +11,7 @@ to create-visitors-initial
 		set shape "person"
 		set size 1.4
 		set queueing-normal?  false
+		set waiting-time  0
 		set location zone 0
 		move-to location
 	]
@@ -29,3 +30,16 @@ to visitor-move-to-new-location
 	set location new-location
 end
 
+
+to update-waiting-time-visitors
+ask visitors [
+	if queueing-normal? [
+		update-waiting-time-queue-normal
+	]
+]
+
+end
+
+to update-waiting-time-queue-normal
+	set waiting-time  waiting-time + 1
+end
