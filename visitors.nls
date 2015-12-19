@@ -34,12 +34,8 @@ end
 to update-waiting-time-visitors
 ask visitors [
 	if queueing? [
-		update-waiting-time-queue-normal
+		set waiting-time  waiting-time + 1
 	]
 ]
 
-end
-
-to update-waiting-time-queue-normal
-	set waiting-time  waiting-time + 1
 end
