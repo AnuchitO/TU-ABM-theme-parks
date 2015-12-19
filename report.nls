@@ -1,5 +1,7 @@
 to draw-graph-plots
   set-current-plot "Wait Time"
   set-current-plot-pen "wait-time"
-  plot globals-waiting-time / globals-numbers-playing
- end
+  let waiting-time-total (sum [waiting-time] of visitors)
+  let number-visitor-queueing  (count visitors with [queueing?]) + 1
+  plot waiting-time-total / number-visitor-queueing
+end
