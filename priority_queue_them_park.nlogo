@@ -12,14 +12,7 @@ to setup
   create-zones-intersaction
   create-atts-point
   create-path-zone-to-atts
-  create-visitors number-persons [
-       set shape "person"
-       set size 1.4
-       set queueing-normal?  false
-       set location zone 0
-       move-to location
-  ]
-  
+  create-visitors-initial
 end
 
 to go
@@ -48,19 +41,9 @@ to queueing
    set queueing-normal?  true
    let vs self
    ask location [
-      set queue-normal lput self queue-normal
+      set queue-normal lput vs queue-normal
    ]
 end
-
-to visitor-move-to-new-location
-  let new-location one-of [link-neighbors] of location
-   ask [link-with new-location] of location [set thickness 0.3]
-   face new-location
-   while [distance new-location > 1]
-         [fd 0.1]
-   set location new-location
-end
-
 @#$#@#$#@
 GRAPHICS-WINDOW
 173
@@ -132,7 +115,7 @@ number-persons
 number-persons
 1
 1000
-1
+351
 1
 1
 NIL

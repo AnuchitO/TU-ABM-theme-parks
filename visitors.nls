@@ -1,8 +1,31 @@
 breed [visitors visitor]
 
 visitors-own [
-  location
-  queueing-normal?
-  waiting-time
-  ]
+	location
+	queueing-normal?
+	waiting-time
+]
+
+to create-visitors-initial
+	create-visitors number-persons [
+		set shape "person"
+		set size 1.4
+		set queueing-normal?  false
+		set location zone 0
+		move-to location
+	]
+end
+
+to visitor-move-to-new-location
+	let new-location one-of [link-neighbors] of location
+	ask [link-with new-location] of location [
+		set thickness 0.3
+	]
+
+	face new-location
+	while [distance new-location > 1][
+		fd 0.1
+	]
+	set location new-location
+end
 
