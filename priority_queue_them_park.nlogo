@@ -4,7 +4,7 @@ __includes[
             "path_between_zones.nls"
             "path_between_zones_and_attraction.nls"
             "visitors.nls"
-            "report.nls"
+            "report.nls"   
           ]
          
 to setup
@@ -122,7 +122,7 @@ number-persons
 number-persons
 1
 1000
-1
+39
 1
 1
 NIL
