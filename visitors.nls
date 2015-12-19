@@ -1,0 +1,8 @@
+breed [visitors visitor]
+
+visitors-own [
+  location
+  queueing-normal?
+  waiting-time
+  ]
+

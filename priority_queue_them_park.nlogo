@@ -1,17 +1,11 @@
-__includes["zones_main.nls"]
-breed [atts  att]
-breed [visitors visitor]
-
-visitors-own [
-  location
-  queueing-normal?
-  waiting-time
-  ]
-
-atts-own [
-   queue-normal  
-  ]
-
+__includes[
+            "zones.nls" 
+            "attraction.nls"
+            "path_between_zones.nls"
+            "path_between_zones_and_attraction.nls"
+            "visitors.nls"
+          ]
+         
 to setup
   clear-all
   reset-ticks
@@ -65,70 +59,6 @@ to visitor-move-to-new-location
    while [distance new-location > 1]
          [fd 0.1]
    set location new-location
-end
-
-to create-atts-point
-  create-atts 1 [
-    set label 8
-    set size 2
-    set queue-normal []
-    set shape "star"
-    set color blue
-    setxy -13 -12
-    ]
-  
-  create-atts 1 [
-    set label 9
-    set size 2
-    set queue-normal []
-    set shape "star"
-    set color blue
-    setxy -9 -5
-    ]
-end
-
-to create-path-connect-zones 
-  ask zone 0 [
-    create-link-with  zone 1
-    ]
-  
-   ask zone 1 [
-    create-link-with  zone 2
-    ]
-   
-    ask zone 2 [
-    create-link-with  zone 3
-    ]
-    
-    ask zone 3 [
-    create-link-with  zone 4
-    ]
-    
-    ask zone 4 [
-    create-link-with  zone 5
-    ]
-    
-    ask zone 5 [
-    create-link-with  zone 6
-    ]
-    
-    ask zone 6 [
-    create-link-with  zone 7
-    ]
-    
-    ask zone 7 [
-    create-link-with  zone 1
-    ]
-    
-    
-     ask links [set thickness 0.2]
-end
-
-to create-path-zone-to-atts
-  ask zone 2 [
-    create-link-with att 8
-    create-link-with att 9
-    ]
 end
 
 @#$#@#$#@

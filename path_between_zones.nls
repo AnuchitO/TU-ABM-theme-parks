@@ -1,0 +1,36 @@
+to create-path-connect-zones
+  ask zone 0 [
+    create-link-with  zone 1
+    ]
+
+   ask zone 1 [
+    create-link-with  zone 2
+    ]
+
+    ask zone 2 [
+    create-link-with  zone 3
+    ]
+
+    ask zone 3 [
+    create-link-with  zone 4
+    ]
+
+    ask zone 4 [
+    create-link-with  zone 5
+    ]
+
+    ask zone 5 [
+    create-link-with  zone 6
+    ]
+
+    ask zone 6 [
+    create-link-with  zone 7
+    ]
+
+    ask zone 7 [
+    create-link-with  zone 1
+    ]
+
+
+     ask links [set thickness 0.2]
+end

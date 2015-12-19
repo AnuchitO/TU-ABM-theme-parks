@@ -1,0 +1,7 @@
+to create-path-zone-to-atts
+  ask zone 2 [
+    create-link-with att 8
+    create-link-with att 9
+    ]
+end
+
