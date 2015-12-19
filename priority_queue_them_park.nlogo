@@ -128,8 +128,8 @@ SLIDER
 number-persons
 number-persons
 1
-1000
-96
+300
+1
 1
 1
 NIL
@@ -500,6 +500,19 @@ NetLogo 5.2.0
 @#$#@#$#@
 @#$#@#$#@
 @#$#@#$#@
+<experiments>
+  <experiment name="wait-time-normal-q" repetitions="1" runMetricsEveryStep="true">
+    <setup>setup</setup>
+    <go>go</go>
+    <timeLimit steps="3000"/>
+    <metric>(sum [waiting-time] of visitors) / ((count visitors with [queueing?]) + 1)</metric>
+    <enumeratedValueSet variable="number-persons">
+      <value value="1"/>
+      <value value="50"/>
+      <value value="300"/>
+    </enumeratedValueSet>
+  </experiment>
+</experiments>
 @#$#@#$#@
 @#$#@#$#@
 default
