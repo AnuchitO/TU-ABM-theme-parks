@@ -4,9 +4,9 @@ __includes[
             "path_between_zones.nls"
             "path_between_zones_and_attraction.nls"
             "visitors.nls"
-            "report.nls"   
+            "report.nls"
           ]
-         
+      
 to setup
   clear-all
   reset-ticks
@@ -22,15 +22,16 @@ to go
    if not queueing? [visitor-move-to-new-location]
    if member? location  atts  [queueing]
   ]
+ tick 
  ;; atts pop queue-normal
  ask atts [
     if not empty? queue-normal [dequeue-normal]
  ]
- ;; set waiting time visitor
- update-waiting-time-visitors
- ;; report waiting time visitor
+ ;; plots waiting time visitor
  draw-graph-plots
- tick 
+ ;;update-waiting-time-visitors  and tick
+ trigger-ticks
+
 end
 
 to dequeue-normal
@@ -40,6 +41,7 @@ to dequeue-normal
        set queueing? false
        set waiting-time 0
     ]
+    
      set queue-normal but-first queue-normal
    ]
 end
@@ -50,6 +52,11 @@ to queueing
    ask location [
       set queue-normal lput vs queue-normal
    ]
+end
+
+to trigger-ticks
+  update-waiting-time-visitors
+  tick
 end
 @#$#@#$#@
 GRAPHICS-WINDOW
@@ -122,7 +129,7 @@ number-persons
 number-persons
 1
 1000
-39
+96
 1
 1
 NIL
@@ -141,7 +148,7 @@ wait time(min)
 0.0
 10.0
 true
-false
+true
 "" ""
 PENS
 "wait-time" 1.0 0 -16777216 true "" ""

@@ -2,6 +2,6 @@ to draw-graph-plots
   set-current-plot "Wait Time"
   set-current-plot-pen "wait-time"
   let waiting-time-total (sum [waiting-time] of visitors)
-  let number-visitor-queueing (sum [waiting-time] of visitors with [queueing?]) + 1
+  let number-visitor-queueing  (count visitors with [queueing?]) + 1
   plot waiting-time-total / number-visitor-queueing
 end
