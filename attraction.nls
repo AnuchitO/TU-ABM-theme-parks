@@ -16,6 +16,31 @@ to create-atts-point
     set label 9
     setxy -9 -5
    ]
+
+  create-atts 1 [
+	set-common-prop-atts
+    set label 10
+	setxy -18 2
+   ]
+
+  create-atts 1 [
+	set-common-prop-atts
+    set label 11
+	setxy -18 7
+   ]
+
+  create-atts 1 [
+	set-common-prop-atts
+    set label 12
+	setxy -13 8
+   ]
+
+  create-atts 1 [
+	set-common-prop-atts
+    set label 13
+	setxy -11 2
+   ]
+
 end
 
 
