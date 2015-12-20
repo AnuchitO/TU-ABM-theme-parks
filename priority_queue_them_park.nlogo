@@ -151,7 +151,7 @@ capacity-of-priority-queue
 capacity-of-priority-queue
 0
 50
-14
+0
 1
 1
 NIL
