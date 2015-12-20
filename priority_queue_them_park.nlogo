@@ -50,10 +50,10 @@ to trigger-ticks
 end
 @#$#@#$#@
 GRAPHICS-WINDOW
-173
-11
-689
-548
+258
+16
+774
+553
 20
 20
 12.3415
@@ -77,10 +77,10 @@ ticks
 30.0
 
 BUTTON
-18
-387
-84
-420
+25
+151
+91
+184
 NIL
 setup
 NIL
@@ -94,10 +94,10 @@ NIL
 1
 
 BUTTON
-90
-387
-153
-420
+97
+151
+160
+184
 NIL
 go\n
 T
@@ -111,25 +111,25 @@ NIL
 1
 
 SLIDER
-0
-23
-172
-56
+5
+22
+177
+55
 number-persons
 number-persons
 1
 300
-90
+300
 1
 1
 NIL
 HORIZONTAL
 
 PLOT
-720
-80
-1289
-439
+801
+61
+1370
+420
 Wait Time
 time
 wait time(min)
@@ -142,6 +142,21 @@ true
 "" ""
 PENS
 "wait-time" 1.0 0 -16777216 true "" ""
+
+SLIDER
+5
+71
+218
+104
+capacity-of-priority-queue
+capacity-of-priority-queue
+0
+50
+14
+1
+1
+NIL
+HORIZONTAL
 
 @#$#@#$#@
 ## WHAT IS IT?
@@ -500,6 +515,27 @@ NetLogo 5.2.0
       <value value="1"/>
       <value value="50"/>
       <value value="300"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="capacity-of-priority-queue">
+      <value value="0"/>
+      <value value="0"/>
+      <value value="0"/>
+    </enumeratedValueSet>
+  </experiment>
+  <experiment name="globals-waiting-time / globals-numbers-playing" repetitions="1" runMetricsEveryStep="true">
+    <setup>setup</setup>
+    <go>go</go>
+    <timeLimit steps="5000"/>
+    <metric>globals-waiting-time / globals-numbers-playing</metric>
+    <enumeratedValueSet variable="number-persons">
+      <value value="1"/>
+      <value value="50"/>
+      <value value="300"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="capacity-of-priority-queue">
+      <value value="1"/>
+      <value value="1"/>
+      <value value="50"/>
     </enumeratedValueSet>
   </experiment>
 </experiments>
