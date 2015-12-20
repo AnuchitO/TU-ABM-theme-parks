@@ -7,7 +7,6 @@ __includes[
             "report.nls"
           ]
 
-
 globals [
    globals-waiting-time
    globals-numbers-playing
@@ -32,14 +31,14 @@ to go
    if not queueing? [visitor-move-to-new-location]
    if member? location  atts  [queueing]
   ]
- ;; atts pop queue-normal
+
  ask atts [
     if not empty? queue-normal [dequeue-normal]
     if not empty? queue-priority [dequeue-priority]
  ]
- ;; plots waiting time visitor
+
  draw-graph-plots
- ;;update-waiting-time-visitors  and tick
+
  trigger-ticks
 
 end
@@ -119,7 +118,7 @@ number-persons
 number-persons
 1
 300
-300
+1
 1
 1
 NIL
